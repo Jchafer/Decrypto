@@ -1,3 +1,11 @@
-<app-header></app-header>
-<app-crypto-data-table></app-crypto-data-table>
-<router-outlet></router-outlet>
+<header>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <h5 id="app-name" class="my-0 mr-md-auto font-weight-normal text-uppercase"><strong>Decrypto</strong></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <app-crypto-search></app-crypto-search>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <app-crypto-data-table></app-crypto-data-table>
+</div>

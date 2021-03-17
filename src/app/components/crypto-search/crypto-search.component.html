@@ -1,0 +1,79 @@
+<div class="container" *ngIf="cryptoDataTable as cryptoDataTable" >
+  <div class="form-outline">
+    <form class="d-none d-md-flex input-group w-auto my-auto">
+      <input class="form-control" [(ngModel)]="filterText" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+      <span class="input-group-text"><i class="fas fa-search"></i></span>
+    </form>
+        <ul class="row card list-group list-group-flush" *ngIf="filterText != ''">
+          <li class="list-group-item" *ngFor="let c of cryptoDataTable | CryptoFilterPipe: filterText">
+            <span><img class="mr-3" src={{c.image}} width="20">| {{c.name}}</span>
+          </li>
+        </ul>
+      </div>
+      <!--<div class="card col-12 w-auto my-auto" *ngFor="let crypto of cryptoDataTable | CryptoFilterPipe: filterText">
+          <div class="card-body">
+            <h5 class="card-title">{{ crypto.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ crypto.name }}</h6>
+          </div>
+        </div>-->
+  </div>
+<!--<div class="content" role="main">
+  <div class="card">
+    <div class="form-group">
+      <label for="search-text">Search Text</label>
+      <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+        [(ngModel)]="searchText" placeholder="Enter text to search" 
+        autofocus>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let c of cryptoDataTable | CryptoFilterPipe: searchText">
+        {{c.name}}
+      </li>
+    </ul>
+  </div>
+</div>-->
+  <!--<div id="mdb-5-search-dropdown" class="rounded shadow-5">
+    <ul id="mdb-5-search-list" class="list-unstyled mb-0"></ul>
+    <hr class="my-0">
+  </div>
+</div>-->
+<!--<form [formGroup]="searchForm">
+
+        <mat-form-field>
+             <input type="text" matInput formControlName="searchBar" [matAutocomplete]="auto">
+        </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Search" aria-label="State" [matAutocomplete]="auto"  formControlName="searchBar">
+                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                  <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+                  <ng-container *ngIf="!isLoading">
+                    <mat-option *ngFor="let option of searchResult | async" [value]="option">
+                      <span>{{ option.volumeInfo.title }}</span>
+
+                    </mat-option>
+                  </ng-container>
+                </mat-autocomplete>
+              </mat-form-field>
+
+
+</form>-->
+<!--<div class="container">
+  <ng-autocomplete 
+    [data]="data"
+    [searchKeyword]="keyword"
+    (selected)='selectEvent($event)'
+    (inputChanged)='onChangeSearch($event)'
+    (inputFocused)='onFocused($event)'
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate">                                 
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+  <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+  <div [innerHTML]="notFound"></div>
+  </ng-template>
+</div>-->
