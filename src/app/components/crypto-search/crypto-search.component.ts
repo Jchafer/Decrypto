@@ -1,9 +1,6 @@
 import { ApiService } from './../../crypto/services/api.service';
 import { CryptoData } from './../../crypto/models/crypto-data';
-import { CryptoDataTableComponent } from '../crypto-data-table/crypto-data-table.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-crypto-search',
@@ -12,35 +9,14 @@ import { startWith, map } from 'rxjs/operators';
 })
 export class CryptoSearchComponent implements OnInit {
 
-  filterText: string = '';
+  keyword = 'name';
   
   constructor(private apiservice: ApiService) { }
-  //@ViewChild(CryptoDataTableComponent) table;
-  public cryptoDataTable: CryptoData[];
+  
+  public cryptoDataList: CryptoData[];
 
   ngOnInit() {
-    this.apiservice.getCryptoData().subscribe(table => (this.cryptoDataTable = table));
+    this.apiservice.getCryptoData().subscribe(list => (this.cryptoDataList = list));
   }
-
-  /*ngAfterViewInit() {
-    this.tableCryptoData = this.table.cryptoDataTable;
-  }*/
-
-  public pulsa(){
-    console.log("hola");
-  }
-
-  /*public listCryptoSearch(searchValue) {
-    console.log("ENTRA");
-    let cryptoDataFiltered: CryptoData[];
-    this.tableCryptoData.forEach(element => {
-      if (element.name.includes(searchValue)){
-        //cryptoDataFiltered.push(element);
-        console.log(searchValue);
-      }
-    });
-
-    console.log("ENTRA");
-  }*/
   
 }

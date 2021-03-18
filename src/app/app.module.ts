@@ -3,7 +3,6 @@ import { CryptoSearchComponent } from './components/crypto-search/crypto-search.
 import { CryptoDataTableComponent } from './components/crypto-data-table/crypto-data-table.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +24,6 @@ import { AutocompleteLibModule} from 'angular-ng-autocomplete';
     AppRoutingModule,
     HttpClientModule,
     CryptoModule,
-    FormsModule,
     AutocompleteLibModule
   ],
   providers: [],
