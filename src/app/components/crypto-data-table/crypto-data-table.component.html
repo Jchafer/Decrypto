@@ -12,13 +12,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let cryptoData of cryptoDataTable; let i = index">
+                <tr class="cryptoData" *ngFor="let cryptoData of cryptoDataTable; let i = index">
                     <td>{{cryptoData.market_cap_rank}}</td>
                     <td><img src={{cryptoData.image}} alt="Image" width="30"></td>
                     <td ><strong>{{cryptoData.name}}</strong></td>
-                    <td>{{cryptoData.current_price | currency}}</td>
-                    <td>{{cryptoData.market_cap | currency}}</td>
-                    <td [ngStyle]="{'color': cryptoData.price_change_percentage_24h >= 0? 'green' : 'red'}">{{ formatNumberToFixed2(cryptoData.price_change_percentage_24h) }}%
+                    <td class="price">{{cryptoData.current_price | currency}}</td>
+                    <td class="marketCap">{{cryptoData.market_cap | currency}}</td>
+                    <td class="24H" [ngStyle]="{'color': cryptoData.price_change_percentage_24h >= 0? 'green' : 'red'}">{{ formatNumberToFixed2(cryptoData.price_change_percentage_24h) }}%
                         <i class="fa fa-angle-up ml-2" [ngStyle]="{'transform':cryptoData.price_change_percentage_24h >= 0 ? 'rotate(0deg) scaleX(1)' : 'rotate(180deg)'}"></i></td>
                 </tr>
             </tbody>
