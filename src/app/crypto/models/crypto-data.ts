@@ -1,4 +1,4 @@
-export class CryptoData {
+export interface CryptoData {
     symbol: string;
     market_cap_rank: number;
     image: string;

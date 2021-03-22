@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CryptoSearchComponent implements OnInit {
 
   keyword = 'name';
+  //filterText: string = '';
   
   constructor(private apiservice: ApiService) { }
   

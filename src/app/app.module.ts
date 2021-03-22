@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CryptoModule } from './crypto/crypto.module';
 import { AutocompleteLibModule} from 'angular-ng-autocomplete';
+//import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AutocompleteLibModule} from 'angular-ng-autocomplete';
     AppRoutingModule,
     HttpClientModule,
     CryptoModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    //FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

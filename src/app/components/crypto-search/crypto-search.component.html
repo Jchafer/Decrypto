@@ -11,11 +11,11 @@
     <ng-template #itemTemplate let-item class="container">
       <div class="row">
         <div class="col col-2 text-center">
-          <img src={{item.image}} width="20">
+          <img src={{item?.image}} width="20">
         </div>
         <div class="col col-7" [innerHTML]="'| '+item.name + '\<strong> ('+(item.symbol)+')\</strong> '"></div>
         <div class="col col-3 text-center">
-          <span># {{item.market_cap_rank}}</span>
+          <span># {{item?.market_cap_rank}}</span>
         </div>
       </div>
     </ng-template>
@@ -32,4 +32,15 @@
     </div>
   </div>
 </div>
-  
+
+<!--<div class="form-outlineboot">
+    <form class="d-none d-md-flex input-group w-auto my-auto">
+      <input class="form-control" [(ngModel)]="filterText" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+      <span class="input-group-text"><i class="fas fa-search"></i></span>
+    </form>
+</div>
+<div class="card col-12 w-auto my-auto" *ngFor="let c of cryptoDataList | CryptoFilterPipe: filterText; let i = index;">
+  <div class="card-body" *ngIf="i <= 4">
+    <span><img class="mr-3" src={{c.image}} width="20">| {{c.name}} {{c.ids}}</span>
+  </div>
+</div>-->
