@@ -1,3 +1,4 @@
+import { ApiService } from './services/api.service';
 import { CryptoFilterPipe } from './crypto-filter.pipe';
 import { CryptoSearchComponent } from './components/crypto-search/crypto-search.component';
 import { CryptoDataTableComponent } from './components/crypto-data-table/crypto-data-table.component';
@@ -9,7 +10,6 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { CryptoModule } from './crypto/crypto.module';
 import { AutocompleteLibModule} from 'angular-ng-autocomplete';
 //import { FormsModule } from '@angular/forms';
 
@@ -24,11 +24,12 @@ import { AutocompleteLibModule} from 'angular-ng-autocomplete';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CryptoModule,
     AutocompleteLibModule,
     //FormsModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

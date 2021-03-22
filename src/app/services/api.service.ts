@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CryptoData } from './../models/crypto-data';
+import { CryptoData } from '../models/crypto-data';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 

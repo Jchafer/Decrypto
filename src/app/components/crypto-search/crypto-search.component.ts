@@ -1,5 +1,5 @@
-import { ApiService } from './../../crypto/services/api.service';
-import { CryptoData } from './../../crypto/models/crypto-data';
+import { ApiService } from '../../services/api.service';
+import { CryptoData } from '../../models/crypto-data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
